@@ -2,7 +2,7 @@ FROM tniblett/arogi-apache-cgi
 
 MAINTAINER Tim Niblett tniblett@arogi.com
 
-ENV APACHE_LOG_DIR /var/log/apache2
+#ENV APACHE_LOG_DIR /var/log/apache2
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y -q
@@ -27,10 +27,10 @@ ADD http://sta.in/circuit-web/leaflet/images/marker-icon-2x.png /var/www/html/le
 ADD http://sta.in/circuit-web/leaflet/images/marker-icon.png /var/www/html/leaflet/images/
 ADD http://sta.in/circuit-web/leaflet/images/marker-shadow.png /var/www/html/leaflet/images/
 RUN chmod -R 755 /var/www/html/*
+RUN rm -rf /run/httpd/* /tmp/httpd*
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 EXPOSE 80
 EXPOSE 8080
 EXPOSE 443
-EXPOSE 22
