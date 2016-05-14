@@ -28,7 +28,7 @@ ADD http://sta.in/circuit-web/leaflet/images/marker-icon.png /var/www/html/leafl
 ADD http://sta.in/circuit-web/leaflet/images/marker-shadow.png /var/www/html/leaflet/images/
 RUN chmod -R 755 /var/www/html/*
 
-CMD ["/usr/sbin/apache2ctl", "-D",  "FOREGROUND"]
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 EXPOSE 80
 EXPOSE 8080
