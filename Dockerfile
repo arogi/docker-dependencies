@@ -10,7 +10,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y -q
 ADD http://sta.in/circuit-web/arogi_dark.css /var/www/html/
 ADD http://sta.in/circuit-web/grayprint.yaml /var/www/html/
 ADD http://sta.in/circuit-web/index.html /var/www/html/
-ADD http://sta.in/circuit-web/data/mydata.js /var/www/html/images/
+ADD http://sta.in/circuit-web/data/mydata.js /var/www/html/data/
 #ADD http://sta.in/circuit-web/images/dots.svg /var/www/html/images/
 ADD http://sta.in/circuit-web/images/ffffff.png /var/www/html/images/
 ADD http://sta.in/circuit-web/images/poi_icons_18@2x.png /var/www/html/images/
