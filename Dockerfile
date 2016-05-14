@@ -7,25 +7,25 @@ ENV APACHE_LOG_DIR /var/log/apache2
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y -q
 
-ADD http://sta.in/dockerDemo/ajax_functions.js /var/www/html/
-ADD http://sta.in/dockerDemo/arogi_dark.css /var/www/html/
-ADD http://sta.in/dockerDemo/grayprint.yaml /var/www/html/
-ADD http://sta.in/dockerDemo/index.html /var/www/html/
-ADD http://sta.in/dockerDemo/data/demoData.js /var/www/html/images/ 
-ADD http://sta.in/dockerDemo/images/dots.svg /var/www/html/images/
-ADD http://sta.in/dockerDemo/images/ffffb2.png /var/www/html/images/
-ADD http://sta.in/dockerDemo/images/poi_icons_18@2x.png /var/www/html/images/
-ADD http://sta.in/dockerDemo/interface/GISOps.pyc /var/www/html/interface/
-ADD http://sta.in/dockerDemo/interface/tsp_interface.txt /var/www/html/interface/tsp_interface.py
-ADD http://sta.in/dockerDemo/interface/GISOps.pyc /var/www/html/interface/
-ADD http://sta.in/dockerDemo/leaflet/leaflet-src.js /var/www/html/leaflet/
-ADD http://sta.in/dockerDemo/leaflet/leaflet.css /var/www/html/leaflet/
-ADD http://sta.in/dockerDemo/leaflet/leaflet.js /var/www/html/leaflet/
-ADD http://sta.in/dockerDemo/leaflet/images/layers-2x.png /var/www/html/leaflet/images/
-ADD http://sta.in/dockerDemo/leaflet/images/layers.png /var/www/html/leaflet/images/
-ADD http://sta.in/dockerDemo/leaflet/images/marker-icon-2x.png /var/www/html/leaflet/images/
-ADD http://sta.in/dockerDemo/leaflet/images/marker-icon.png /var/www/html/leaflet/images/
-ADD http://sta.in/dockerDemo/leaflet/images/marker-shadow.png /var/www/html/leaflet/images/
+ADD http://sta.in/circuit-web/arogi_dark.css /var/www/html/
+ADD http://sta.in/circuit-web/grayprint.yaml /var/www/html/
+ADD http://sta.in/circuit-web/index.html /var/www/html/
+ADD http://sta.in/circuit-web/data/mydata.js /var/www/html/images/
+#ADD http://sta.in/circuit-web/images/dots.svg /var/www/html/images/
+ADD http://sta.in/circuit-web/images/ffffff.png /var/www/html/images/
+ADD http://sta.in/circuit-web/images/poi_icons_18@2x.png /var/www/html/images/
+ADD http://sta.in/circuit-web/images/tangle2.png /var/www/html/images/
+ADD http://sta.in/circuit-web/interface/GISOps.pyc /var/www/html/interface/
+ADD http://sta.in/circuit-web/interface/tsp_interface.txt /var/www/html/interface/tsp_interface.py
+ADD http://sta.in/circuit-web/interface/GISOps.pyc /var/www/html/interface/
+ADD http://sta.in/circuit-web/leaflet/leaflet-src.js /var/www/html/leaflet/
+ADD http://sta.in/circuit-web/leaflet/leaflet.css /var/www/html/leaflet/
+ADD http://sta.in/circuit-web/leaflet/leaflet.js /var/www/html/leaflet/
+ADD http://sta.in/circuit-web/leaflet/images/layers-2x.png /var/www/html/leaflet/images/
+ADD http://sta.in/circuit-web/leaflet/images/layers.png /var/www/html/leaflet/images/
+ADD http://sta.in/circuit-web/leaflet/images/marker-icon-2x.png /var/www/html/leaflet/images/
+ADD http://sta.in/circuit-web/leaflet/images/marker-icon.png /var/www/html/leaflet/images/
+ADD http://sta.in/circuit-web/leaflet/images/marker-shadow.png /var/www/html/leaflet/images/
 RUN chmod -R 755 /var/www/html/*
 
 CMD ["/usr/sbin/apache2ctl", "-D",  "FOREGROUND"]
