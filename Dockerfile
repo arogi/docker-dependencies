@@ -13,7 +13,7 @@ ADD http://sta.in/circuit-web/README.md /var/www/html/
 ADD http://sta.in/circuit-web/CONTRIBUTING.md /var/www/html/
 ADD http://sta.in/circuit-web/style.yaml /var/www/html/
 ADD http://sta.in/circuit-web/index.html /var/www/html/
-ADD http://sta.in/circuit-web/data/cal_parks.geojson /var/www/html/data/
+ADD http://sta.in/circuit-web/data/cal_parks.geojson /var/www/html/data/mydata.geojson
 ADD http://sta.in/circuit-web/data/data_LA10.geojson /var/www/html/data/
 ADD http://sta.in/circuit-web/data/data_SB100.geojson /var/www/html/data/
 ADD http://sta.in/circuit-web/data/data_SB14.geojson /var/www/html/data/
@@ -21,7 +21,6 @@ ADD http://sta.in/circuit-web/data/data_SB150.geojson /var/www/html/data/
 ADD http://sta.in/circuit-web/data/data_SB200.geojson /var/www/html/data/
 ADD http://sta.in/circuit-web/data/data_SB250.geojson /var/www/html/data/
 ADD http://sta.in/circuit-web/data/data_SB500.geojson /var/www/html/data/
-ADD http://sta.in/circuit-web/data/mydata.geojson /var/www/html/data/
 ADD http://sta.in/circuit-web/data/nps_parks.geojson /var/www/html/data/
 ADD http://sta.in/circuit-web/images/ffffff.png /var/www/html/images/
 ADD http://sta.in/circuit-web/images/poi_icons_18@2x.png /var/www/html/images/
