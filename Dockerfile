@@ -1,10 +1,9 @@
+# Set the base image as Ubuntu Trusty and pull from docker hub
 FROM ubuntu:trusty
 
 MAINTAINER Tim Niblett tniblett@arogi.com
 
-#ENV APACHE_LOG_DIR /var/log/apache2
-
-# This section gets the required dependecies we need to create our image
+# This section gets the required dependencies we need to create our image
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get upgrade -y -q
 RUN apt-get install -y nano \
   wget \
@@ -18,9 +17,8 @@ RUN apt-get install -y nano \
   python-scipy \
   git
 
-#This section sets up Google OR-tools
-RUN pip install numpy && \
-  wget https://github.com/google/or-tools/releases/download/v2016-04/Google.OrTools.python.examples.3574.tar.gz && \
+# This section sets up Google OR-tools
+RUN wget https://github.com/google/or-tools/releases/download/v2016-04/Google.OrTools.python.examples.3574.tar.gz && \
   tar -xzf Google.OrTools.python.examples.3574.tar.gz && \
   cd ortools_examples && \
   python setup.py install && \
@@ -75,8 +73,8 @@ RUN apt-get clean && \
   rm -rf /run/httpd/* /tmp/httpd* && \
   chmod -R 755 /var/www/html/*
 
+# Default command when a container is run
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
+# Expose port 80 for webhosting
 EXPOSE 80
-EXPOSE 8080
-EXPOSE 443
