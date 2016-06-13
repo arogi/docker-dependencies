@@ -7,7 +7,7 @@ if [ ! -d "$DIRECTORY" ]; then
     --depth=1 \
     --recurse-submodules \
     --single-branch \
-    --branch=master https://github.com/arogi/docker-demo.git
+    --branch=master https://github.com/arogi/docker-arogi-demos.git
 fi
 
 docker build \
