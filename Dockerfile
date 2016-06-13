@@ -1,7 +1,7 @@
 # Set the base image as Ubuntu Trusty and pull from docker hub
 FROM ubuntu:trusty
 
-MAINTAINER Tim Niblett tniblett@arogi.com
+MAINTAINER Alan Glennon alan@arogi.com
 
 # This section gets the required dependencies we need to create our image
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get upgrade -y -q
@@ -61,11 +61,11 @@ RUN a2dismod mpm_event && \
   sed -i '4 a\  AddHandler cgi-script .py' /etc/apache2/sites-enabled/000-default.conf
 
 # Import arogi examples
-RUN git clone --depth=1 --single-branch --branch=master https://github.com/arogi/circuit-web.git && \
-  cd circuit-web && \
+RUN git clone --depth=1 --single-branch --branch=master https://github.com/arogi/arogi-demos.git && \
+  cd arogi-demos && \
   cp -R * /var/www/html && \
   cd .. && \
-  rm -R circuit-web/
+  rm -R arogi-demos/
 
 # Perform some cleanup
 RUN apt-get clean && \
