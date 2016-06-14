@@ -60,12 +60,6 @@ RUN a2dismod mpm_event && \
   sed -i '3 a\  </Directory>' /etc/apache2/sites-enabled/000-default.conf && \
   sed -i '4 a\  AddHandler cgi-script .py' /etc/apache2/sites-enabled/000-default.conf
 
-# Import arogi examples
-RUN git clone --depth=1 --single-branch --branch=master https://github.com/arogi/arogi-demos.git && \
-  cd arogi-demos && \
-  cp -R * /var/www/html && \
-  cd .. && \
-  rm -R arogi-demos/
 
 # Perform some cleanup
 RUN apt-get clean && \
