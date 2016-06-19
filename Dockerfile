@@ -18,13 +18,13 @@ RUN apt-get install -y nano \
   git
 
 # This section sets up Google OR-tools
-RUN wget https://github.com/google/or-tools/releases/download/v2016-06/Google.OrTools.python.examples.3629.tar.gz && \
-  tar -xzf Google.OrTools.python.examples.3629.tar.gz && \
+RUN wget https://github.com/google/or-tools/releases/download/v2016-04/Google.OrTools.python.examples.3574.tar.gz && \
+  tar -xzf Google.OrTools.python.examples.3574.tar.gz && \
   cd ortools_examples && \
   python setup.py install && \
   cd .. && \
   rm -R ortools_examples && \
-  rm Google.OrTools.python.examples.3629.tar.gz && \
+  rm Google.OrTools.python.examples.3574.tar.gz && \
   cd /usr/local/lib/python2.7/dist-packages && \
   chown -R root:www-data * && \
   chmod -R 755 *
@@ -59,7 +59,6 @@ RUN a2dismod mpm_event && \
   sed -i '2 a\     Options +ExecCGI' /etc/apache2/sites-enabled/000-default.conf && \
   sed -i '3 a\  </Directory>' /etc/apache2/sites-enabled/000-default.conf && \
   sed -i '4 a\  AddHandler cgi-script .py' /etc/apache2/sites-enabled/000-default.conf
-
 
 # Perform some cleanup
 RUN apt-get clean && \
