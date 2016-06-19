@@ -60,7 +60,6 @@ RUN a2dismod mpm_event && \
   sed -i '3 a\  </Directory>' /etc/apache2/sites-enabled/000-default.conf && \
   sed -i '4 a\  AddHandler cgi-script .py' /etc/apache2/sites-enabled/000-default.conf
 
-
 # Perform some cleanup
 RUN apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
