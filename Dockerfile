@@ -18,7 +18,7 @@ RUN apt-get install -y nano \
   git
 
 # This section sets up Google OR-tools
-RUN wget https://github.com/google/or-tools/releases/download/v2016-04/Google.OrTools.python.examples.3574.tar.gz && \
+RUN wget https://github.com/arogi/docker-dependencies/raw/master/Google.OrTools.python.examples.3574.tar.gz && \
   tar -xzf Google.OrTools.python.examples.3574.tar.gz && \
   cd ortools_examples && \
   python setup.py install && \
