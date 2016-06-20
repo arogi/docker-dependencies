@@ -1,5 +1,5 @@
-# Set the base image as Ubuntu Trusty and pull from docker hub
-FROM ubuntu:trusty
+# Set the base image as Ubuntu xenial and pull from docker hub
+FROM ubuntu:xenial
 
 MAINTAINER Alan Glennon alan@arogi.com
 
