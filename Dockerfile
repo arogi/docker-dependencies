@@ -48,7 +48,11 @@ RUN wget http://download.osgeo.org/gdal/2.1.1/gdal-2.1.1.tar.gz && \
   make install && \
   ldconfig && \
   cd .. && \
-  rm -R gdal-2.1.1
+  rm -R gdal-2.1.1 && \
+  rm gdal-2.1.1.tar.gz  && \
+  rm proj-4.9.2.tar.gz && \
+  rm proj-datumgrid-1.5.tar.gz
+
 
 # Setup Apache2
 RUN a2dismod mpm_event && \
