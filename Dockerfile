@@ -1,5 +1,5 @@
-# Set the base image as Ubuntu Trusty and pull from docker hub
-FROM ubuntu:trusty
+# Set the base image as Ubuntu 16.04 and pull from docker hub
+FROM ubuntu:16.04
 
 MAINTAINER Alan Glennon alan@arogi.com
 
@@ -18,19 +18,19 @@ RUN apt-get install -y nano \
   git
 
 # This section sets up Google OR-tools
-RUN wget https://github.com/google/or-tools/releases/download/v2016-04/Google.OrTools.python.examples.3574.tar.gz && \
-  tar -xzf Google.OrTools.python.examples.3574.tar.gz && \
+RUN wget https://github.com/google/or-tools/releases/download/v4.2/or-tools.python.examples-4.2.3758.tar.gz && \
+  tar -xzf or-tools.python.examples-4.2.3758.tar.gz && \
   cd ortools_examples && \
   python setup.py install && \
   cd .. && \
   rm -R ortools_examples && \
-  rm Google.OrTools.python.examples.3574.tar.gz && \
+  rm or-tools.python.examples-4.2.3758.tar.gz && \
   cd /usr/local/lib/python2.7/dist-packages && \
   chown -R root:www-data * && \
   chmod -R 755 *
 
 # This section sets up GDAL/OGR and PROJ
-RUN wget http://download.osgeo.org/gdal/2.1.0/gdal-2.1.0.tar.gz && \
+RUN wget http://download.osgeo.org/gdal/2.1.1/gdal-2.1.1.tar.gz && \
   wget http://download.osgeo.org/proj/proj-4.9.2.tar.gz && \
   wget http://download.osgeo.org/proj/proj-datumgrid-1.5.tar.gz && \
   tar -xzf proj-4.9.2.tar.gz && \
@@ -42,14 +42,14 @@ RUN wget http://download.osgeo.org/gdal/2.1.0/gdal-2.1.0.tar.gz && \
   make install && \
   cd .. && \
   rm -R proj-4.9.2 && \
-  tar -xzf gdal-2.1.0.tar.gz && \
-  cd gdal-2.1.0 && \
+  tar -xzf gdal-2.1.1.tar.gz && \
+  cd gdal-2.1.1 && \
   ./configure --with-python && \
   make && \
   make install && \
   ldconfig && \
   cd .. && \
-  rm -R gdal-2.1.0
+  rm -R gdal-2.1.1
 
 # Setup Apache2
 RUN a2dismod mpm_event && \
