@@ -18,12 +18,12 @@ RUN apt-get install -y nano \
   git
 
 # This section sets up Google OR-tools
-RUN wget https://github.com/google/or-tools/releases/download/v4.2/or-tools.python.examples-4.2.3758.tar.gz && \
-  tar -xzf or-tools.python.examples-4.2.3758.tar.gz && \
+RUN wget https://github.com/google/or-tools/releases/download/v4.2/or-tools.python.examples_4.2.3758.tar.gz && \
+  tar -xzf or-tools.python.examples_4.2.3758.tar.gz && \
   cd ortools_examples && \
   python setup.py install && \
   cd .. && \
-  rm or-tools.python.examples-4.2.3758.tar.gz && \
+  rm or-tools.python.examples_4.2.3758.tar.gz && \
   cd /usr/local/lib/python2.7/dist-packages && \
   chown -R root:www-data * && \
   chmod -R 755 *
